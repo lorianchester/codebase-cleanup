@@ -53,11 +53,27 @@ python -m app.groceries
 ```
 
 Run the stocks report:
+
 ```sh
 python -m app.stocks
 ```
 
 Run the crypto report:
+
 ```sh
 python -m app.crypto
+```
+
+Run the unemployment report:
+
+```sh
+python -m app.unemployment
+```
+
+
+## Testing
+Run tests:
+
+```sh
+pytest
 ```
