@@ -3,24 +3,19 @@
 print("STOCKS REPORT...")
 
 import os
-from dotenv import load_dotenv
-from pandas import read_csv
 from app.utils import to_usd
+from app.alphavantage_service import fetch_stocks_data
 
-load_dotenv()
+#user inputs which stock data they want to see
+symbol = input("Please input a stock symbol (default: 'NFLX'): ") or "NFLX"
 
-ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
+#retrieve data for stock user wants to see data for
+df = fetch_stocks_data(symbol)
 
-symbol = input("Please input a crypto symbol (default: 'NFLX'): ") or "NFLX"
-url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={symbol}&apikey={ALPHAVANTAGE_API_KEY}&datatype=csv"
-
-df = read_csv(url)
-#print(df.columns)
-#breakpoint()
-
+#get latest stock data
 latest = df.iloc[0]
 
+#print stock information
 print(symbol)
 print(latest["timestamp"])
-print(latest["close"])
 print(to_usd(latest["close"]))

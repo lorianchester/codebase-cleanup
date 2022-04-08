@@ -13,7 +13,7 @@ load_dotenv()
 ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
 # docs: https://www.alphavantage.co/documentation/#unemployment
-url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
+url = f"https://www.alphavantage.co/query?function=UNEMPLOYMEN&apikey={ALPHAVANTAGE_API_KEY}"
 response = requests.get(url)
 parsed_response = json.loads(response.text)
 #print(parsed_response)

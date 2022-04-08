@@ -1,10 +1,6 @@
 
 # READ INVENTORY OF PRODUCTS
 
-#products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
-#products_df = read_csv(products_filepath)
-#products = products_df.to_dict("records")
-
 import os
 
 from app.utils import to_usd
@@ -36,16 +32,14 @@ print("---------")
 print("THERE ARE", len(products), "PRODUCTS:")
 print("---------")
 
+all_prices = []
+
 for p in products:
     print("..." + p["name"] + "   " + to_usd(p["price"]))
-
-
-all_prices = []
-for p in products:
     all_prices.append(float(p["price"]))
 
 import statistics
-avg_price = statistics.median(all_prices)
+avg_price = statistics.mean(all_prices)
 
 print("---------")
 print("AVERAGE PRICE:", to_usd(avg_price))
