@@ -20,7 +20,7 @@ def fetch_crypto_data(symbol):
     Returns:
         parsed_response (dict): A dictionary of the crypto data
             
-    Invoke like this: fetch_crypto_data("NFLX")
+    Invoke like this: fetch_crypto_data("BTC")
     """
     url = f"https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&market=USD&symbol={symbol}&apikey={ALPHAVANTAGE_API_KEY}"
     response = requests.get(url)
@@ -54,7 +54,7 @@ def fetch_unemployment_data():
     Returns:
         parsed_response (dict): A dictionary of the unemployment data
     
-    Invoke like this: fetch_unemployment_data("NFLX")
+    Invoke like this: fetch_unemployment_data()
     """
     url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
     response = requests.get(url)
