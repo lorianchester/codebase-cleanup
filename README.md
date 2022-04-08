@@ -61,3 +61,9 @@ Run the crypto report:
 ```sh
 python -m app.crypto
 ```
+
+## Testing
+Run tests:
+```sh
+pytest
+```
