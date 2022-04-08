@@ -3,6 +3,14 @@ from random import choice
 def determine_winner(user_choice, computer_choice):
     """
     This function determines the winning choice between a user choice and computer choice in rock, paper, scissors.
+    
+    Parameters:
+        user_choice (str): A string of the user's choice ("rock", "paper", or "scissors")
+        computer_choice (str): A string of the computer's choice ("rock", "paper", or "scissors")
+
+    Returns:
+        winning_choice (str): A string of the winning choice between user_choice and computer_choice
+    
     Invoke like this: determine_winner("rock", "paper")
     Example return value: "paper"
     """
